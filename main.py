@@ -59,7 +59,11 @@ while True:
         pass
     elif replay == 'N' or 'No' or 'nein' or 'Nein' or 'n':
         break
+        print("Thank you for playing!")
+        time.sleep(2.5)
         exit
     else:
         break
+        print("Thank you for playing!")
+        time.sleep(2.5)
         exit
