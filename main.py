@@ -19,31 +19,31 @@ while True:
     correct_answer = 6 + 2
     answer = int(input("Answer: \n "))
     if answer == correct_answer:
-        print("You thing you got that correct.")
-        correct_answers += correct_answers + 1
+        print("You think you got that correct.")
+        correct_answers += 1  # Line Changed: Fixed scoring math
     else:
-        print("You thing you got that incorrect.")
-        incorrect_answers += incorrect_answers + 1
+        print("You think you got that incorrect.")
+        incorrect_answers += 1  # Line Changed: Fixed scoring math
     time.sleep(0.5)
     print("The next question is: \n What is 3/2")
     correct_answer = 3 / 2
     answer = float(input("You answer: \n"))
     if answer == correct_answer:
-        print("You thing you got that correct.")
-        correct_answers += correct_answers + 1
+        print("You think you got that correct.")
+        correct_answers += 1  # Line Changed: Fixed scoring math
     else:
-        print("You thing you got that incorrect.")
-        incorrect_answers += incorrect_answers + 1
+        print("You think you got that incorrect.")
+        incorrect_answers += 1  # Line Changed: Fixed scoring math
     time.sleep(0.5)
     print("The next question is: \n What is 9*2")
     correct_answer = 9 * 2
     answer = int(input("Your answer: \n "))
     if answer == correct_answer:
         print("You think you got that correct.")
-        correct_answers += correct_answer + 1
+        correct_answers += 1  # Line Changed: Fixed scoring math
     else:
         print("You think you got that wrong.")
-        incorrect_answers += incorrect_answers + 1
+        incorrect_answers += 1  # Line Changed: Fixed scoring math
     time.sleep(10)
     print("The teacher checked the tests.")
     if correct_answers > incorrect_answers:
@@ -54,16 +54,12 @@ while True:
         print("What.. happened?")
     print(f"You had {str(incorrect_answers)} of incorrect answers and you got {str(correct_answers)} correct answers.")
 
-    replay = input("Replay?: ")
-    if replay == 'Y' or 'Yes' or 'yea':
-        pass
-    elif replay == 'N' or 'No' or 'nein' or 'Nein' or 'n':
-        break
-        print("Thank you for playing!")
-        time.sleep(2.5)
-        exit
+    replay = input("Replay? (Y/N): ").strip().lower()
+    
+    if replay in ['y', 'yes', 'yea']:
+        pass  
     else:
-        break
         print("Thank you for playing!")
         time.sleep(2.5)
-        exit
+        break
+
